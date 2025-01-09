@@ -1,0 +1,127 @@
+/* General reset and styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #1a1a1a; /* Dark background for a modern look */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Video container */
+#videos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  height: 70vh;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Video player styles */
+.video-player {
+  width: 100%;
+  height: 100%;
+  max-width: 45%;
+  max-height: 100%;
+  border-radius: 10px;
+  background: black;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Controls container */
+#controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual control button styles */
+.control-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #444;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.control-container:hover {
+  background: #666;
+  transform: scale(1.1);
+}
+
+.control-container svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+/* Responsive Design */
+
+/* For smaller devices (less than 768px) */
+@media (max-width: 768px) {
+  #videos {
+      flex-direction: column; /* Stack videos vertically */
+      height: auto; /* Allow height to adjust automatically */
+  }
+
+  .video-player {
+      max-width: 90%; /* Make videos take up more horizontal space */
+      margin-bottom: 10px; /* Add space between stacked videos */
+  }
+
+  #controls {
+      max-width: 90%; /* Adjust control bar width */
+  }
+
+  .control-container {
+      width: 40px; /* Smaller buttons */
+      height: 40px;
+  }
+
+  .control-container svg {
+      width: 20px; /* Adjust icon size */
+      height: 20px;
+  }
+}
+
+/* For very small devices (less than 480px) */
+@media (max-width: 480px) {
+  #videos {
+      gap: 10px; /* Reduce spacing between videos */
+  }
+
+  .video-player {
+      max-width: 100%; /* Allow videos to take full width */
+  }
+
+  .control-container {
+      width: 35px; /* Even smaller buttons */
+      height: 35px;
+  }
+
+  .control-container svg {
+      width: 18px; /* Adjust icon size further */
+      height: 18px;
+  }
+}
